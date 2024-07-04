@@ -1,5 +1,5 @@
 {
-  "name": "goit-react-hw-02",
+  "name": "goit-react-hw-03",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@vitejs/plugin-react": "^4.3.1",
+    "formik": "^2.4.6",
     "modern-normalize": "^2.0.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"

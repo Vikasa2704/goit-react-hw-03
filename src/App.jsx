@@ -1,8 +1,9 @@
-import { useState, useEffect } from 'react';
-import Description from './components/Description/Description';
-import Options from './components/Options/Options';
-import Feedback from './components/Feedback/Feedback';
-import Notification from './components/Notification/Notification';
+import { useState, useEffect, useId} from 'react';
+import { Formik } from 'formik';
+import ContactForm from './components/ContactForm';
+import SearchBox from './components/SearchBox';
+import ContactList from './components/ContactList';
+
 import './App.css';
 
 const feedbackData = {
@@ -52,5 +53,14 @@ const App = () => {
     </>
   );
 };
+
+
+
+<div>
+  <h1>Phonebook</h1>
+  <ContactForm />
+  <SearchBox />
+  <ContactList />
+</div>
 
 export default App;
