@@ -1,15 +1,12 @@
-import style from './Feedback.module.css';
+import css from "./SearchBox.module.css";
 
-const Feedback = ({ feedback, totalFeedback, positiveFeedback }) => {
+const SearchBox = ({value, onFilter}) => {
+  
   return (
-    <div className={style.feedback}>
-      <p>Good: {feedback.good}</p>
-      <p>Neutral: {feedback.neutral}</p>
-      <p>Bad: {feedback.bad}</p>
-      <p>Total: {totalFeedback}</p>
-      <p>Positive: {positiveFeedback}%</p>
+    <div>
+      <p className={css.label}>Find contacts by name</p>
+      <input className={css.input} type="text" value={value} onChange={(e)=>onFilter(e.target.value)} />
     </div>
   );
 };
-
-export default Feedback;
+export default SearchBox;

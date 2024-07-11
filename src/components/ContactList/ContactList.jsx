@@ -1,11 +1,14 @@
-import styles from './Notification.module.css'
+import css from './ContactList.module.css'
+import Contact from "../Contact/Contact"
 
-
-
-const Notification = () => {
+const ContactList = ({ contacts, onDelete }) => {
   return (
-    <h2 className= {styles.title}>No feedback yet</h2>
-  )
+    <ul className={css.list}>
+      {contacts.map(({ id, number, name }) => (
+        <Contact name={name} key={id} onDelete={onDelete} number={number} id={id} />
+      ))}
+    </ul>
+  );
 }
 
-export default Notification
+export default ContactList;

@@ -1,15 +1,29 @@
-import styles from './Options.module.css'
+import { IoIosContact } from 'react-icons/io';
+import { MdPhoneInTalk } from 'react-icons/md';
+import css from './Contact.module.css';
 
+const Contact = ({ id, number, name, onDelete }) => {
+	return (
+		<li className={css.contactItem}>
+			<div>
+				<div className={css.contactContext}>
+					<IoIosContact />
+					<span>{name}</span>
+				</div>
+				<div className={css.contactContext}>
+					<MdPhoneInTalk />
+					<a href={`tel: ` + number}>{number}</a>
+				</div>
+			</div>
+			<button
+				onClick={() => onDelete(id)}
+				type='button'
+				aria-label='delete button'
+			>
+				Delete
+			</button>
+		</li>
+	);
+};
 
-function Options({ updateFeedback, resetFeedback, totalFeedbackCount }) {
-  return (
-    <div className={styles.wrapper}>
-      <button onClick={() => updateFeedback ('good')}>Good</button>
-      <button onClick={() => updateFeedback ('neutral')}>Neutral</button>
-      <button onClick={() => updateFeedback ('bad')}>Bad</button>
-      {totalFeedbackCount > 0 && (<button onClick={resetFeedback}>Reset</button>)}
-    </div>
-  );
-}
-
-export default Options
+export default Contact;
